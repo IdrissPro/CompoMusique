@@ -1,7 +1,6 @@
-# CompoMusique
+# LSTMusic
+A 3-person school project for Music generation using neural networks. 
 
-The work is still in progress, files might be added in the future. For the moment you have two files:
+We use the Maestro dataset (https://magenta.tensorflow.org/datasets/maestro), which contains 200 hours of classical piano. 
 
-ModeleLSTM.py that contains the model used to learn patterns 
-
-MIDI.py that allows to read and process information from MIDI files
+The model is an LSTM model, using keras.

@@ -1,0 +1,64 @@
+Sur VS Code : installer Rainbow CSV pour mieux voir les données, indent rainbow est utile aussi
+
+Pour les stats, analyser :
+
+1/ datasetParMusiques.txt
+2/ dataset_16notes.csv
+3/ maestro-v3.0.0.csv (ou .json) dans le dossier maestro-v3.0.0
+
+faites vos programmes sur MINI_1 ou MINI_10 qui representent 1% et 10% du dataset complet pour ensuite analyser les fichiers complets
+
+pas besoin d'analyser LSTM_16notes.csv, il reprend les infos du 2/
+
+EXPLICATIONS
+1/ datasetParMusiques.txt
+
+    Il s'agit d'une liste de musiques
+    Une musique se compose de tracks 
+    Une track se compose d'une liste de notes
+    Une note a 3 parametres : valeur, durée, durée d'attente avant la prochaine note
+
+    STATISTIQUES :
+        durée des morceaux
+        nombre de notes par morceaux, 
+        histogramme de (valeur, durée, durée d'attente avant la prochaine note),
+        quelle note est la plus souvent jouée apres une note precise (on peut generer de la musique à partir de ca, a voir si c'est mieux que notre RN)
+        quelle note est la plus souvent jouée apres 2 notes precises
+        idem pour 3 notes ?
+
+        Pour le dataset complet :
+        A faire par chanson et/ou par auteur (retrouver le nom du morceau et de l'auteur grace au fichier CSV dans le dossier maestro-v3.0.0)
+
+        Y a t'il des notes de durée 0 ? ( ALARMANT SI OUI CAR CA VEUT DIRE QU IL Y A UN PRBLM ET JE VEUX VITE LE SAVOIR)
+        Combien de notes en simultanée peuvent etre jouées ?
+        ...
+
+
+2/ dataset_16notes.csv
+
+    Il s'agit d'une liste de sequences de 16 notes
+    On donne les 15 premieres et on doit predire la 16e
+
+    STATISTIQUES
+        Analyser par sequences : 
+        la répartition des notes 
+        la durée moyenne des notes
+        la relation entre les 15 premieres et la 16e
+        ...
+        Analyser les 16e notes entre elles (si elles sont bien toutes assez variées ME PREVENIR SI PAS LE CAS)
+        analyser les 15 premieres notes entre elles
+
+        Le but est de trouver les sequences de musiques qui sortent du lot 
+
+3/ maestro-v3.0.0.csv (ou .json) dans le dossier maestro-v3.0.0
+
+    Ce n'est pas moi qui l'ai créé, il etait fournis avec le dataset
+
+    STATISTIQUES
+        les auteurs, le nombre de morceaux par auteurs, les mouvements artistiques, périodes, les instruments, les durées, gammes...
+
+
+AUTRES :
+Les histogrammes sont vos amis et donnent bien sur un rapport surtout si c'est gaussien
+penser à regarder les fonctions dans G_DATA, pour lire un fichier CSV par exemple
+la fonction eval() vous sera utile à mon avis : eval(String "[1,2,3]")= Liste [1,2,3]
